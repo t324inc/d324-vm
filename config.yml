@@ -30,7 +30,7 @@ vagrant_synced_folders:
     create: true
 
 # Memory and CPU to use for this VM.
-vagrant_memory: 2048
+vagrant_memory: 4096
 vagrant_cpus: 1
 
 # Ensure vagrant plugins are installed.
@@ -163,7 +163,7 @@ mysql_packages:
 # to install *any* extras, set this value to an empty set, e.g. `[]`.
 installed_extras:
   - adminer
-  # - blackfire
+  - blackfire
   - drupalconsole
   - drush
   # - elasticsearch
@@ -171,26 +171,26 @@ installed_extras:
   - mailhog
   # - memcached
   # - newrelic
-  # - nodejs
+  - nodejs
   - pimpmylog
   - redis
   # - ruby
   # - selenium
-  - solr
+  # - solr
   # - tideways
   - upload-progress
   # - varnish
-  # - xdebug
+  - xdebug
   # - xhprof # use `tideways` if you're installing PHP 7+
 
 # Add any extra apt or yum packages you would like installed.
-extra_packages:
-  - sqlite
+#extra_packages:
+#  - sqlite
 
 # You can configure almost anything else on the server in the rest of this file.
 extra_security_enabled: false
 
-firewall_enabled: true
+firewall_enabled: false
 firewall_allowed_tcp_ports:
   - "22"
   - "25"
@@ -211,7 +211,7 @@ firewall_disable_ufw: true
 # See version-specific notes: http://docs.drupalvm.com/en/latest/configurations/php/
 php_version: "7.3"
 php_install_recommends: no
-php_memory_limit: "1G"
+php_memory_limit: "2G"
 php_display_errors: "On"
 php_display_startup_errors: "On"
 php_realpath_cache_size: "1024K"

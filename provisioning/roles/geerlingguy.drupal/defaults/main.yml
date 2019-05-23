@@ -41,7 +41,7 @@ drupal_db_host: "127.0.0.1"
 
 # Set this to 'false' if you don't need to install Drupal (using the drupal_*
 # settings below), but instead copy down a database (e.g. using drush sql-sync).
-drupal_install_site: true
+drupal_install_site: false
 
 # Settings for installing a Drupal site if 'drupal_install_site:' is 'true'.
 drupal_domain: "drupaltest.test"

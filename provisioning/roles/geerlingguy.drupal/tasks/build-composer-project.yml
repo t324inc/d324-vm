@@ -32,11 +32,16 @@
   become: false
   when: not drupal_site_exists
 
+- name: Check if the .env file exists
+  stat:
+    path: "{{ drupal_composer_install_dir }}/.env"
+  register: env_result
+
 - name: Move .env file into place
   copy:
-    src: "{{ drupal_deploy_dir }}/.env.example"
+    src: "{{ drupal_composer_install_dir }}/../.env.example"
     dest: "{{ drupal_composer_install_dir }}/.env"
-  when: drupal_composer_install_dir and drupal_site_exists
+  when: not env_result.stat.exists
   become: false
 
 - name: Install dependencies with composer require (this may take a while).
